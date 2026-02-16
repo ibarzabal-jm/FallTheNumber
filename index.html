@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fall The Number</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div>
+          <p class="label">Siguiente</p>
+          <div id="nextTile" class="tile preview">2</div>
+        </div>
+        <div>
+          <p class="label">Puntos</p>
+          <p id="score" class="score">0</p>
+        </div>
+      </header>
+
+      <section class="game-wrap">
+        <div class="drop-hint">
+          <p class="label">Arrastra arriba y suelta para tirar en esa columna</p>
+          <div id="dropLane" class="drop-lane" aria-label="Zona de suelta por columna"></div>
+        </div>
+
+        <div id="gameOver" class="game-over hidden">
+          <p>💥 Fin de partida</p>
+          <button id="restartBtn" type="button">Reiniciar</button>
+        </div>
+
+        <div id="board" class="board" aria-label="Tablero de juego"></div>
+      </section>
+
+      <section class="controls" aria-label="Controles">
+        <button id="leftBtn" type="button">◀</button>
+        <button id="dropBtn" type="button">⤓</button>
+        <button id="rightBtn" type="button">▶</button>
+      </section>
+
+      <p class="help">Tip: toca/arrastra en la barra superior para elegir columna y soltar.</p>
+    </main>
+
+    <script type="module" src="src/game.js"></script>
+  </body>
+</html>
