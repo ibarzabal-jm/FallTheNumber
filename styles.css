@@ -15,16 +15,16 @@
 body {
   background: radial-gradient(circle at top, #373d48, var(--bg));
   color: var(--text);
-  min-height: 100dvh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .app {
-  width: 100%;
-  min-height: 100dvh;
-  padding: 10px;
+  width: min(100%, 440px);
+  padding: 14px;
   display: grid;
-  grid-template-rows: auto 1fr auto auto;
-  gap: 10px;
+  gap: 12px;
 }
 
 .hud {
@@ -61,9 +61,7 @@ body {
   padding: 10px;
   position: relative;
   display: grid;
-  grid-template-rows: auto 1fr;
   gap: 8px;
-  min-height: 0;
 }
 
 .drop-hint {
@@ -115,13 +113,9 @@ body {
 .board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(8, 1fr);
   gap: 6px;
   touch-action: none;
   user-select: none;
-  position: relative;
-  overflow: hidden;
-  min-height: 0;
 }
 
 .cell {
@@ -130,33 +124,14 @@ body {
   border-radius: 10px;
   display: grid;
   place-items: center;
-  font-size: clamp(1rem, 5.4vw, 1.9rem);
+  font-size: clamp(0.95rem, 4.8vw, 1.8rem);
   font-weight: 800;
   color: #fff;
-  box-shadow: inset 0 -4px 0 rgb(0 0 0 / 18%);
 }
 
 .cell.active {
   outline: 2px solid #fff;
   outline-offset: -2px;
-}
-
-.cell.floating,
-.cell.merge-fly {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.cell.floating {
-  transition: transform 80ms linear;
-}
-
-.cell.merge-fly {
-  z-index: 2;
-  transition: transform 220ms ease, opacity 220ms ease;
 }
 
 .controls {
@@ -190,7 +165,7 @@ body {
   display: grid;
   place-content: center;
   gap: 10px;
-  z-index: 6;
+  z-index: 2;
   text-align: center;
 }
 
@@ -231,17 +206,4 @@ body {
 .v8192 {
   background: #f3a72f;
   color: #2d1c07;
-}
-
-@media (min-width: 700px) {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
-  .app {
-    width: min(100%, 440px);
-    min-height: min(100dvh, 900px);
-    padding: 14px;
-  }
 }

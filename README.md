@@ -4,13 +4,11 @@ Juego simple en **HTML + CSS + JS** (sin dependencias) inspirado en mecánicas d
 
 ## Reglas
 
-- Cae un bloque numérico en un tablero de 5 columnas (valores aleatorios entre 2 y 128) con gravedad más lenta y fluida.
+- Cae un bloque numérico en un tablero de 5 columnas (valores aleatorios entre 2 y 128).
 - Puedes moverlo izquierda/derecha antes de que se fije.
 - Al tocar fondo (o con caída rápida), se fija.
 - Bloques con el mismo número se fusionan en uno de valor doble.
 - Después de cada fusión se vuelve a aplicar gravedad para permitir cascadas.
-- Si una ficha cae junto a varios vecinos iguales, mergea todos juntos en un solo paso (ej: 16 + 2 vecinos 16 => 64; con 3 vecinos => 128).
-- Los merges muestran una animación de los vecinos moviéndose hacia la ficha resultante.
 - Si no hay espacio para crear el siguiente bloque, termina la partida.
 
 ## Controles
